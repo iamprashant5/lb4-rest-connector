@@ -2,7 +2,7 @@ import {inject, Provider} from '@loopback/core';
 import { Filter } from '@loopback/repository';
 import {getService} from '@loopback/service-proxy';
 import {RestDataSource} from '../datasources';
-import { NewUser, User } from '../models';
+// import { NewUser, User } from '../models';
 
 export interface UserApi {
   // this is where you define the Node.js methods that will be

@@ -8,8 +8,8 @@ import {RepositoryMixin} from '@loopback/repository';
 import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
-import {NewSequence} from './sequence';
-import { createToken } from './middlewares/generate-token.middleware';
+import {MySequence} from './sequence';
+// import { createToken } from './middlewares/generate-token.middleware';
 
 export {ApplicationConfig};
 
@@ -19,11 +19,11 @@ export class RestConnectorDatasourceApplication extends BootMixin(
   constructor(options: ApplicationConfig = {}) {
     super(options);
 
-    this.middleware(createToken)
+    // this.middleware(createToken)
 
     // Set up the custom sequence
-    this.sequence(NewSequence);
-    // this.sequence(MySequence);
+    // this.sequence(NewSequence);
+    this.sequence(MySequence);
 
 
     // Set up default home page
