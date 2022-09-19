@@ -1,7 +1,7 @@
 import {inject, Provider} from '@loopback/core';
 import { Filter } from '@loopback/repository';
 import {getService} from '@loopback/service-proxy';
-import {RestDataSource} from '../datasources';
+import {OpenApiDataSource} from '../datasources';
 import { User } from '../models';
 
 export interface UserApi {
@@ -18,8 +18,8 @@ export interface UserApi {
 export class UserApiProvider implements Provider<UserApi> {
   constructor(
     // rest must match the name property in the datasource json file
-    @inject('datasources.rest')
-    protected dataSource: RestDataSource = new RestDataSource(),
+    @inject('datasources.openApi')
+    protected dataSource: OpenApiDataSource = new OpenApiDataSource(),
   ) {}
 
   value(): Promise<UserApi> {
